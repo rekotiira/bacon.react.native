@@ -1,7 +1,7 @@
 import Bacon from "baconjs"
 import R     from "ramda"
 
-import {classes} from "../src/bacon.react.html"
+import {classes} from "../src/bacon.react.native"
 
 function show(x) {
   switch (typeof x) {
