@@ -1,5 +1,6 @@
 import B, * as Base from "bacon.react.base"
 import Bacon from "baconjs"
+import RN from "react-native"
 
 // Helpers
 
@@ -75,9 +76,12 @@ export const config = Base.config
 "NavigatorIOS", "PickerIOS", "Picker", "ProgressBarAndroid",
 "ProgressViewIOS", "RefreshControl", "ScrollView",
 "SegmentedControlIOS", "Slider", "SliderIOS", "StatusBar",
-"Switch", "TabBarIOS", "TabBarIOS.Item", "Text", "TextInput",
+"Switch", "TabBarIOS", "Text", "TextInput",
 "ToolbarAndroid", "TouchableHighlight", "TouchableNativeFeedback",
 "TouchableOpacity", "TouchableWithoutFeedback",
-"View", "ViewPagerAndroid", "WebView"].forEach(c => B[c] = fromClass(c))
+"View", "ViewPagerAndroid", "WebView"].forEach(c => B[c] = fromClass(RN[c]))
+
+// TabBarIOS.Item has to be specified separately it's a sub-item
+B.TabBarIOS.Item = fromClass(RN.TabBarIOS.Item)
 
 export default B
